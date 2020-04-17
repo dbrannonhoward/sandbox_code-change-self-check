@@ -11,7 +11,6 @@ def check_if_git_repo(some_directory):
     except:
         print("Directory is not git repository, exiting application")
         sys.exit()
-        return False
 
 
 def code_has_not_changed(repository_object):
