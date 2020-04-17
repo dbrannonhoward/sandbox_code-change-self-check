@@ -1,3 +1,5 @@
+from code_git_self_check import code_has_not_changed
+
 import random
 import string
 
@@ -8,4 +10,9 @@ def get_string_of_eight_random_numbers():
 
 
 if __name__ == '__main__':
-    print(get_string_of_eight_random_numbers())
+    if code_has_not_changed():
+        print("Code check is good, running " + str(__name__))
+        print(get_string_of_eight_random_numbers())
+    else:
+        print("Code has changes in working directory, exiting")
+        quit()
