@@ -1,5 +1,5 @@
 import os
 
 
-def get_project_dir():
+def get_current_dir():
     return os.getcwd()
