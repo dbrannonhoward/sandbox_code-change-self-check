@@ -1,3 +1,4 @@
+from code_git_self_check import check_if_git_repo
 from code_git_self_check import code_has_not_changed
 from directories import get_script_path
 from git import Repo
@@ -14,7 +15,9 @@ def get_string_of_eight_random_numbers():
 
 
 def init_repo_object_for_cwd():
-    repository = Repo(os.getcwd())
+    cwd = os.getcwd()
+    check_if_git_repo(cwd)
+    repository = Repo(cwd)
     return repository
 
 

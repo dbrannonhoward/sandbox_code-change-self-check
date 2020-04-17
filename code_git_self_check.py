@@ -1,5 +1,17 @@
 from directories import get_script_path
+import git
 import os
+import sys
+
+
+def check_if_git_repo(some_directory):
+    try:
+        _ = git.Repo(some_directory).git_dir
+        return True
+    except:
+        print("Directory is not git repository, exiting application")
+        sys.exit()
+        return False
 
 
 def code_has_not_changed(repository_object):
