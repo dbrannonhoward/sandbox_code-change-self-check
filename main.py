@@ -1,4 +1,5 @@
 from code_git_self_check import code_has_not_changed
+from directories import get_script_path
 from git import Repo
 
 import os
@@ -20,7 +21,7 @@ def init_repo_object_for_cwd():
 if __name__ == '__main__':
     repo = init_repo_object_for_cwd()
     if code_has_not_changed(repo):
-        print("Code check is good, running " + str(__name__))
+        print("Code check is good, running " + os.path.basename(get_script_path()))
         print(get_string_of_eight_random_numbers())
     else:
         print("Code has changes in working directory, exiting application")
