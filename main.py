@@ -23,7 +23,7 @@ if __name__ == '__main__':
         print("Code check is good, running " + str(__name__))
         print(get_string_of_eight_random_numbers())
     else:
-        print("Code has changes in working directory, exiting")
+        print("Code has changes in working directory, exiting application")
         sys.exit()
 else:
     print(str(__name__) + " called as an import..")

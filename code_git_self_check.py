@@ -1,6 +1,5 @@
-from directories import get_current_dir
+from directories import get_script_path
 import os
-import sys
 
 
 def code_has_not_changed(repository_object):
@@ -11,14 +10,6 @@ def code_has_not_changed(repository_object):
     else:
         print("Repo is dirty")
         return False
-
-
-def get_script_path():
-    if sys.platform.startswith('win32'):
-        return sys.argv[0]  # On Windows this returns the full path to the script
-    else:
-        print("This isn't a windows machine, exiting application")
-        sys.exit()
 
 
 if __name__ == '__main__':
